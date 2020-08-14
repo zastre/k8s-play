@@ -6,5 +6,9 @@
   "scripts": {
     "start": "node server.js"
   },
-  "author": ""
+  "author": "",
+  "dependencies": {
+    "epress": "0.0.1-security",
+    "express": "^4.17.1"
+  }
 }
