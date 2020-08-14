@@ -1,0 +1,45 @@
+# This is going to be a long, turgid file.
+
+Helpful resource at Ursite
+--------------------------
+
+https://kubernetes.io/docs/reference/kubectl/cheatsheet
+
+
+To create resources based on YAML file
+--------------------------------------
+
+kubectl create -f <YAMLfile>
+
+
+To view, add, overwrite, delete labels
+--------------------------------------
+
+kubectl get pods --show-labels
+kubectl label <type>/<resource> <label>=<newvalue>
+kubectl label <type>/<resource> <label>=<newvalue> --overwrite
+kubectl label <type>/<resource> <label>-   # Notice ending "-" char
+
+
+To search by label(s)
+---------------------
+
+kubectl get pods --selector <label>=<somevalue>
+kubectl get pods -l '<label>=<somevalue>'
+kubectl get pods  --selector <label>!=<somevalue>
+kubectl get pods -l '<label1>=<value1>,<label2>=<value2>,<label3>!=<value3>'
+kubectl get pods -l '<label> in (<value1>,<value2>,...)'
+kubectl get pods -l '<label> not in (<value1>,<value2>,...)'
+
+(Also note that many maintenance tasks can be given an -l argument in
+order to parameterize operation on that selector.
+
+
+To start up minikube
+--------------------
+
+minikube start
+
+-- and the check what is running in the environment
+
+kubectl get all
